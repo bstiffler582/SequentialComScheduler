@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
@@ -9,8 +6,13 @@ namespace SequentialComScheduler
 {
     class Program
     {
+        // create scheduler
         private static SequentialComScheduler _comScheduler = new SequentialComScheduler();
 
+        /// <summary>
+        /// Simple console samples
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // using TaskFactory
@@ -23,7 +25,7 @@ namespace SequentialComScheduler
                 Console.WriteLine("Task 1 Complete!");
             }, CancellationToken.None, TaskCreationOptions.None, _comScheduler);
 
-            // using a dedicated Task
+            // using a dedicated Task / Action delegate
             Task comTask = new Task(() => Task2());
             comTask.Start(_comScheduler);
 
@@ -37,7 +39,7 @@ namespace SequentialComScheduler
                 Console.WriteLine("Thread ID: " + Thread.CurrentThread.ManagedThreadId);
                 Console.WriteLine("Press any key to Cancel...");
 
-                for (int i = 0; i < 10000; i++)
+                for (int i = 0; i < 100000; i++)
                 {
                     if (token.IsCancellationRequested)
                     {
@@ -45,13 +47,13 @@ namespace SequentialComScheduler
                         break;
                     }
                     // simulate some work
-                    Thread.SpinWait(100000);
+                    Thread.SpinWait(1000);
                 }
 
                 Console.WriteLine("Task 3 Complete!");
             }, token, TaskCreationOptions.None, _comScheduler);
 
-            
+            // get cancel input
             Console.Read();
 
             // cancel task

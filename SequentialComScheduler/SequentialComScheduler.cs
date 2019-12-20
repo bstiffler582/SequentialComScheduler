@@ -16,8 +16,6 @@ namespace SequentialComScheduler
     {
         readonly BlockingCollection<Task> _taskQueue = new BlockingCollection<Task>();
         readonly Thread _thread;
-
-        // create cancellation token
         readonly CancellationTokenSource _cancelTake = new CancellationTokenSource();
         volatile bool _terminate = false;
 
