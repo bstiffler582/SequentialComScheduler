@@ -6,7 +6,9 @@ It also implements an OLE/COM message filter which...
 
 [3]"Enables handling of incoming and outgoing COM messages while waiting for responses from synchronous calls. You can use message filtering to prevent waiting on a synchronous call from blocking another application."
 
-The scheduler was designed to be used for automating tasks in Visual Studio (using the EnvDTE namespace).
+The scheduler was originally designed to be used for automating tasks in Visual Studio (using the EnvDTE namespace).
+
+See Program.main() for example usage.
 
 References:
 
