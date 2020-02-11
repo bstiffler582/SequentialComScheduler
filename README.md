@@ -13,14 +13,17 @@ See Program.main() for example usage.
 References:
 
 TaskScheduler:
+
 [1] https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler?view=netframework-4.8
 
 [2] https://www.journeyofcode.com/custom-taskscheduler-sta-threads/
 
 IMessageFilter:
+
 [3] https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.ole.interop.imessagefilter?view=visualstudiosdk-2019
 
 [4] https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_automationinterface/54043195771173899.html&id=
 
 Visual Studio EnvDTE:
+
 [5] https://docs.microsoft.com/en-us/dotnet/api/envdte?view=visualstudiosdk-2017
